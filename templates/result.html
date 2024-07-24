@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat ID</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header text-center">
+              <h1>Your Chat ID</h1>
+            </div>
+            <div class="card-body">
+              <p class="lead text-center">The Chat ID is: <strong>{{ chat_id }}</strong></p>
+              <div class="text-center mb-3">
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Go Back</a>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#apiResponse" aria-expanded="false" aria-controls="apiResponse">
+                  Show API Response
+                </button>
+              </div>
+              <div class="collapse mt-3" id="apiResponse">
+                <div class="card card-body">
+                  <pre>{{ updates | tojson(indent=2) }}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
